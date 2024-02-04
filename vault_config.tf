@@ -22,7 +22,7 @@ resource "tfe_workspace" "vault_config" {
     identifier = local.vcs_repo
     branch     = "main"
     # github_app_installation_id = data.tfe_github_app_installation.cube-earth-labs.id
-    github_app_installation_id = "oc-UUggCbTDBSgsvuHt"
+    github_app_installation_id = "Iv1.a2b16df02bc2b121"
   }
 }
 
