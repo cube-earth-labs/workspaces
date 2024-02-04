@@ -7,9 +7,10 @@ locals {
   vcs_repo            = "cube-earth-labs/vault_config"
 }
 
-# data "tfe_github_app_installation" "cube-earth-labs" {
-#   name = "cube-earth-labs"
-# }
+# Retrieve the Github App installation ID 
+data "tfe_github_app_installation" "cube-earth-labs" {
+  name = "ericreeves"
+}
 
 ##########################################################
 # Resources
@@ -19,10 +20,9 @@ resource "tfe_workspace" "vault_config" {
   organization = var.tfc_org
   project_id   = var.platform_project_id
   vcs_repo {
-    identifier = local.vcs_repo
-    branch     = "main"
-    # github_app_installation_id = data.tfe_github_app_installation.cube-earth-labs.id
-    github_app_installation_id = "Iv1.a2b16df02bc2b121"
+    identifier                 = local.vcs_repo
+    branch                     = "main"
+    github_app_installation_id = data.tfe_github_app_installation.cube-earth-labs.id
   }
 }
 
