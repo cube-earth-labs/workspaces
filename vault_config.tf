@@ -4,7 +4,12 @@
 locals {
   tfc_vault_role      = "tfc-role"
   tfc_vault_auth_path = "jwt-platform"
+  vcs_repo            = "cube-earth-labs/vault_config"
 }
+
+# data "tfe_github_app_installation" "cube-earth-labs" {
+#   name = "cube-earth-labs"
+# }
 
 ##########################################################
 # Resources
@@ -13,6 +18,12 @@ resource "tfe_workspace" "vault_config" {
   name         = "vault_config"
   organization = var.tfc_org
   project_id   = var.platform_project_id
+  vcs_repo {
+    identifier = local.vcs_repo
+    branch     = "main"
+    # github_app_installation_id = data.tfe_github_app_installation.cube-earth-labs.id
+    github_app_installation_id = "oc-UUggCbTDBSgsvuHt"
+  }
 }
 
 resource "tfe_variable" "enable_vault_provider_auth" {
