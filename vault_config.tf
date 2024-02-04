@@ -16,10 +16,12 @@ data "tfe_github_app_installation" "cube-earth-labs" {
 # Resources
 ##########################################################
 resource "tfe_workspace" "vault_config" {
-  name         = "vault_config"
-  organization = var.tfc_org
-  project_id   = var.platform_project_id
-  auto_apply   = true
+  name             = "vault_config"
+  organization     = var.tfc_org
+  project_id       = var.platform_project_id
+  auto_apply       = true
+  trigger_patterns = ["/**/*.tf"]
+
   vcs_repo {
     identifier                 = local.vcs_repo
     branch                     = "main"
