@@ -19,6 +19,7 @@ resource "tfe_workspace" "vault_config" {
   name         = "vault_config"
   organization = var.tfc_org
   project_id   = var.platform_project_id
+  auto_apply   = true
   vcs_repo {
     identifier                 = local.vcs_repo
     branch                     = "main"
