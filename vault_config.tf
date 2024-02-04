@@ -25,7 +25,7 @@ resource "tfe_workspace" "vault_config" {
   vcs_repo {
     identifier     = local.vcs_repo
     branch         = "main"
-    oauth_token_id = data.tfe_oauth_client.client.id
+    oauth_token_id = data.tfe_oauth_client.client.oauth_token_id
   }
 }
 
