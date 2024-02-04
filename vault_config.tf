@@ -7,9 +7,9 @@ locals {
   vcs_repo            = "cube-earth-labs/vault_config"
 }
 
-# Retrieve the Github App installation ID 
-data "tfe_github_app_installation" "cube-earth-labs" {
-  name = "ericreeves"
+# Retrieve the Github Oauth Client
+data "tfe_oauth_client" "client" {
+  oauth_client_id = var.oauth_client_id
 }
 
 ##########################################################
@@ -23,9 +23,9 @@ resource "tfe_workspace" "vault_config" {
   trigger_patterns = ["/**/*.tf"]
 
   vcs_repo {
-    identifier                 = local.vcs_repo
-    branch                     = "main"
-    github_app_installation_id = data.tfe_github_app_installation.cube-earth-labs.id
+    identifier     = local.vcs_repo
+    branch         = "main"
+    oauth_token_id = data.tfe_oauth_client.client.id
   }
 }
 

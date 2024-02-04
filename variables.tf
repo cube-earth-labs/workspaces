@@ -13,3 +13,7 @@ variable "vault_addr" {
 variable "vault_namespace" {
   description = "The Vault namespace to use, if not using the default"
 }
+
+variable "oauth_client_id" {
+  description = "The ID of the OAuth Client to use for VCS integration"
+}
