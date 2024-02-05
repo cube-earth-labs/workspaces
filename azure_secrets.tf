@@ -70,21 +70,21 @@ resource "tfe_variable" "azure_tfc_vault_auth_path" {
   category = "env"
 }
 
-resource "tfe_variable" "tfc_vault_backed_azure_auth" {
-  workspace_id = tfe_workspace.azure_secrets.id
+# resource "tfe_variable" "tfc_vault_backed_azure_auth" {
+#   workspace_id = tfe_workspace.azure_secrets.id
 
-  key      = "TFC_VAULT_BACKED_AZURE_AUTH"
-  value    = "true"
-  category = "env"
-}
+#   key      = "TFC_VAULT_BACKED_AZURE_AUTH"
+#   value    = "true"
+#   category = "env"
+# }
 
-resource "tfe_variable" "tfc_vault_backed_azure_run_vault_role" {
-  workspace_id = tfe_workspace.azure_secrets.id
+# resource "tfe_variable" "tfc_vault_backed_azure_run_vault_role" {
+#   workspace_id = tfe_workspace.azure_secrets.id
 
-  key      = "TFC_VAULT_BACKED_AZURE_RUN_VAULT_ROLE"
-  value    = "tfc"
-  category = "env"
-}
+#   key      = "TFC_VAULT_BACKED_AZURE_RUN_VAULT_ROLE"
+#   value    = "tfc"
+#   category = "env"
+# }
 
 resource "tfe_variable" "azure_subscription_id" {
   workspace_id = tfe_workspace.azure_secrets.id
