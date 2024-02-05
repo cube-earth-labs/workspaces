@@ -6,6 +6,10 @@ variable "platform_project_id" {
   description = "The ID of the Platform Project"
 }
 
+variable "labs_project_id" {
+  description = "The ID of the Labs Project"
+}
+
 variable "vault_addr" {
   description = "The address of the Vault instance runs will access."
 }

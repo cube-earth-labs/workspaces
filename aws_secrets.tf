@@ -12,7 +12,7 @@ locals {
 resource "tfe_workspace" "aws_secrets" {
   name             = "aws_secrets"
   organization     = var.tfc_org
-  project_id       = var.platform_project_id
+  project_id       = var.labs_project_id
   auto_apply       = true
   trigger_patterns = ["/**/*.tf"]
 
