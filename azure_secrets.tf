@@ -91,7 +91,7 @@ resource "tfe_variable" "azure_subscription_id" {
 
   key      = "azure_subscription_id"
   value    = var.arm_subscription_id
-  category = "env"
+  category = "terraform"
 }
 
 resource "tfe_variable" "azure_tenant_id" {
@@ -99,5 +99,5 @@ resource "tfe_variable" "azure_tenant_id" {
 
   key      = "azure_tenant_id"
   value    = var.arm_tenant_id
-  category = "env"
+  category = "terraform"
 }
