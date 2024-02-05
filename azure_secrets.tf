@@ -82,6 +82,6 @@ resource "tfe_variable" "tfc_vault_backed_azure_run_vault_role" {
   workspace_id = tfe_workspace.azure_secrets.id
 
   key      = "TFC_VAULT_BACKED_AZURE_RUN_VAULT_ROLE"
-  value    = local.tfc_labs_role
+  value    = "tfc"
   category = "env"
 }
