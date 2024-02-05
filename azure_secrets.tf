@@ -69,3 +69,19 @@ resource "tfe_variable" "azure_tfc_vault_auth_path" {
   value    = local.tfc_labs_auth_path
   category = "env"
 }
+
+resource "tfe_variable" "tfc_vault_backed_azure_auth" {
+  workspace_id = tfe_workspace.azure_secrets.id
+
+  key      = "TFC_VAULT_BACKED_AZURE_AUTH"
+  value    = "true"
+  category = "env"
+}
+
+resource "tfe_variable" "tfc_vault_backed_azure_run_vault_role" {
+  workspace_id = tfe_workspace.azure_secrets.id
+
+  key      = "TFC_VAULT_BACKED_AZURE_RUN_VAULT_ROLE"
+  value    = local.tfc_labs_role
+  category = "env"
+}
