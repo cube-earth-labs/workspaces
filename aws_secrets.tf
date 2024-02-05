@@ -2,7 +2,7 @@
 # Configuration
 ##########################################################
 locals {
-  aws_secrets_vcs_repo = "cube-earth-labs/vault_config"
+  aws_secrets_vcs_repo = "cube-earth-labs/aws_secrets"
 }
 
 
