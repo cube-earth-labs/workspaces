@@ -21,3 +21,13 @@ variable "vault_namespace" {
 variable "oauth_client_id" {
   description = "The ID of the OAuth Client to use for VCS integration"
 }
+
+variable "azure_subscription_id" {
+  type        = string
+  description = "The Azure Subscription ID"
+}
+
+variable "azure_tenant_id" {
+  type        = string
+  description = "The Azure Tenant ID"
+}
