@@ -13,6 +13,7 @@ locals {
 ##########################################################
 resource "tfe_workspace" "azure_secrets" {
   name             = "azure_secrets"
+  description      = "Azure Secrets Engine and Key Vault Configuration"
   organization     = var.tfc_org
   project_id       = var.labs_project_id
   auto_apply       = true

@@ -11,6 +11,7 @@ locals {
 ##########################################################
 resource "tfe_workspace" "aws_secrets" {
   name             = "aws_secrets"
+  description      = "AWS Secrets Engine and SSM Parameter Store Configuration"
   organization     = var.tfc_org
   project_id       = var.labs_project_id
   auto_apply       = true

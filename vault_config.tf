@@ -13,6 +13,7 @@ locals {
 ##########################################################
 resource "tfe_workspace" "vault_config" {
   name             = "vault_config"
+  description      = "Vault Configuration Management"
   organization     = var.tfc_org
   project_id       = var.platform_project_id
   auto_apply       = true
