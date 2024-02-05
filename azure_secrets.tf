@@ -85,3 +85,19 @@ resource "tfe_variable" "tfc_vault_backed_azure_run_vault_role" {
   value    = "tfc"
   category = "env"
 }
+
+resource "tfe_variable" "azure_subscription_id" {
+  workspace_id = tfe_workspace.azure_secrets.id
+
+  key      = "azure_subscription_id"
+  value    = var.azure_subscription_id
+  category = "env"
+}
+
+resource "tfe_variable" "azure_tenant_id" {
+  workspace_id = tfe_workspace.azure_secrets.id
+
+  key      = "azure_tenant_id"
+  value    = var.azure_tenant_id
+  category = "env"
+}
