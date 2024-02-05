@@ -2,15 +2,11 @@
 # Configuration
 ##########################################################
 locals {
-  tfc_vault_role      = "tfc-role"
-  tfc_vault_auth_path = "jwt-platform"
-  vcs_repo            = "cube-earth-labs/vault_config"
+  tfc_vault_role        = "tfc-role"
+  tfc_vault_auth_path   = "jwt-platform"
+  vault_config_vcs_repo = "cube-earth-labs/vault_config"
 }
 
-# Retrieve the Github Oauth Client
-data "tfe_oauth_client" "client" {
-  oauth_client_id = var.oauth_client_id
-}
 
 ##########################################################
 # Resources
@@ -23,7 +19,7 @@ resource "tfe_workspace" "vault_config" {
   trigger_patterns = ["/**/*.tf"]
 
   vcs_repo {
-    identifier     = local.vcs_repo
+    identifier     = local.vault_config_vcs_repo
     branch         = "main"
     oauth_token_id = data.tfe_oauth_client.client.oauth_token_id
   }
