@@ -35,6 +35,5 @@ resource "tfe_registry_module" "this" {
     display_identifier = local.tf_test_vcs_repo
     identifier         = local.tf_test_vcs_repo
     oauth_token_id     = data.tfe_oauth_client.client.oauth_token_id
-    branch             = "main"
   }
 }
