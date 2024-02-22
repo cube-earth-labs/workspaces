@@ -27,10 +27,10 @@ locals {
 # }
 
 resource "tfe_registry_module" "this" {
+  organization = var.tfc_org
   test_config {
     tests_enabled = true
   }
-
   vcs_repo {
     display_identifier = local.tf_test_vcs_repo
     identifier         = local.tf_test_vcs_repo
